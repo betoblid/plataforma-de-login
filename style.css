@@ -1,0 +1,200 @@
+/* Aplicando reset no css padrão */
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+:root {
+  --blue-600: #0056FB;
+  --blue-580: #0086FB;
+  --black: #000000;
+  --white: #ffffff;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  min-height: calc(100vh - 30px);
+}
+
+.container_login,
+.container_ilustration {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 24px;
+}
+
+.form_login {
+  position: relative;
+  max-width: 560px;
+  width: 100%;
+  z-index: 9;
+}
+
+.form_login div label {
+  font: normal 16px 'Roboto';
+}
+
+.form_login div input[type=text],
+.form_login div input[type=password],
+.form_login div input[type=email] {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid var(--black);
+  height: 42px;
+  font-family: 'Roboto';
+  font-size: 16px;
+  border-radius: 5px;
+  outline: none;
+  margin-bottom: 15px;
+  margin-top: 5px;
+}
+
+.form_login button {
+  position: relative;
+  max-width: 560px;
+  width: 100%;
+  background: var(--blue-600);
+  font: bold 16px 'Roboto';
+  height: 42px;
+  color: var(--white);
+  padding-block: 10px;
+  cursor: pointer;
+  margin-bottom: 18px;
+  transition: background-color .5s linear;
+  z-index: 2;
+}
+
+.form_login button:hover {
+  background-color: var(--blue-580);
+}
+.box-termo{
+  margin-bottom: 10px;
+}
+.box-termo label{
+  font-weight: normal;
+}
+/* colocando uma imagem de fundo do formulario */
+.form_login::before{
+  content: '';
+  background: url(assets/code.svg) no-repeat;
+  height: 90px;
+  background-size: 90px;
+  width: 90px;
+  position: absolute;
+  opacity: 0.4;
+  bottom: -50px;
+  right: -30px;
+  z-index: 1;
+}
+.area {
+  max-width: 560px;
+  width: 100%;
+}
+
+.regitro {
+  font: 500 18px 'Roboto';
+  align-self: flex-start;
+}
+.regitro a {
+  margin-left: 4px;
+  text-decoration: none;
+  font-weight: normal;
+  color: var(--black);
+}
+.container_login h1 {
+  max-width: 560px;
+  width: 100%;
+  text-align: start;
+  font: bold 32px 'Roboto';
+  margin-bottom: 18px;
+}
+
+/* section de informações */
+
+.container_ilustration{
+  background-color: var(--blue-600);
+  min-height: 100vh;
+}
+.info-img{
+  max-width: 400px;
+  width: 100%;
+}
+.container_ilustration h2{
+  font-size: 38px;
+  margin-bottom: 18px;
+}
+.container_ilustration p{
+  color: var(--white);
+  line-height: 150%;
+}
+.container_ilustration p, .container_ilustration h2{
+  color: var(--white);
+  max-width: 400px;
+  font-family: 'Roboto';
+}
+/* rodapé do site */
+footer {
+  background: var(--black);
+  text-align: center;
+  padding-block: 6px;
+  min-height: 30px;
+}
+
+footer p,
+footer p a {
+  font: 500 14px 'Roboto';
+  color: var(--white);
+}
+
+footer p a {
+  text-decoration: none;
+}
+
+/* responsivo do site */
+@media (max-width: 700px){
+  main{
+    flex-direction: column;
+  }
+  .container_login{
+    margin-inline: auto;
+    width: 85%;
+    padding: 24px 0;
+  }
+
+  .container_ilustration{
+    width: 100%;
+    padding: 30px 0;
+
+  }
+  .form_login::before{
+    background-size: 80px;
+    bottom: -40px;
+    right: -20px;
+    height: 82px;
+    width: 82px;
+  }
+}
+/* responsivo do site */
+@media (max-width: 500px){
+  .info-img{
+    width: 85%;
+  }
+  .container_ilustration h2{
+    font-size: 30px;
+    text-align: center;
+    padding: 0 14px;
+    max-width: 400px;
+  }
+  .container_ilustration p{
+    max-width: 400px;
+    padding: 0 14px;
+  }
+}
